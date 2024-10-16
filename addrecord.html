@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Record</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #2b7a78;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #005f73;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #b0d6e0;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #0077b6;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add New Record</h2>
+
+    <form action="#" method="POST" onsubmit="submitForm(event)">
+        <label for="disease">Disease:</label>
+        <input type="text" id="disease" name="disease" placeholder="Enter disease name" required>
+
+        <label for="doctor">Doctor:</label>
+        <input type="text" id="doctor" name="doctor" placeholder="Enter doctor name" required>
+
+        <label for="medicine">Medicine:</label>
+        <input type="text" id="medicine" name="medicine" placeholder="Enter medicine name" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function submitForm(event) {
+        event.preventDefault();
+
+        const disease = document.getElementById('disease').value;
+        const doctor = document.getElementById('doctor').value;
+        const medicine = document.getElementById('medicine').value;
+        const date = document.getElementById('date').value;
+
+        alert(`Record Submitted:\n\nDisease: ${disease}\nDoctor: ${doctor}\nMedicine: ${medicine}\nDate: ${date}`);
+
+        // Here you can add the functionality to store this data.
+        // Example: localStorage.setItem('records', JSON.stringify({disease, doctor, medicine, date}));
+    }
+</script>
+
+</body>
+</html>
