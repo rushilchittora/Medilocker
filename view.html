@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Medical Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        #user-info {
+            background-color: #e2f0d9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        #medical-records {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #records-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .record-item {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MediLocker - View Your Medical Records</h1>
+    </header>
+
+    <main>
+        <section id="user-info">
+            <h2>Your Information</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Age:</strong> 29</p>
+            <p><strong>Weight:</strong> 75kg</p>
+            <p><strong>Height:</strong> 175cm</p>
+        </section>
+
+        <section id="medical-records">
+            <h2>Medical Records</h2>
+            <div id="records-list">
+                <!-- Records will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate fetching user records via an API call
+            const records = [
+                {
+                    date: '2023-10-10',
+                    disease: 'Cold and Cough',
+                    prescription: 'Paracetamol, Cough Syrup',
+                    doctor: 'Dr. Smith'
+                },
+                {
+                    date: '2024-01-12',
+                    disease: 'Flu',
+                    prescription: 'Tamiflu, Rest',
+                    doctor: 'Dr. Jane Doe'
+                }
+            ];
+
+            const recordsList = document.getElementById('records-list');
+
+            // Dynamically insert records into the page
+            records.forEach(record => {
+                const recordItem = document.createElement('div');
+                recordItem.classList.add('record-item');
+
+                recordItem.innerHTML = `
+                    <p><strong>Date:</strong> ${record.date}</p>
+                    <p><strong>Disease:</strong> ${record.disease}</p>
+                    <p><strong>Prescription:</strong> ${record.prescription}</p>
+                    <p><strong>Doctor:</strong> ${record.doctor}</p>
+                `;
+
+                recordsList.appendChild(recordItem);
+            });
+        });
+    </script>
+</body>
+</html>
