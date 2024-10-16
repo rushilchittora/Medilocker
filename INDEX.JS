@@ -36,3 +36,34 @@ switchToLogin.addEventListener('click', () => {
     loginForm.classList.add('active');
     signupForm.classList.remove('active');
 });
+
+// Handle signup form submission
+document.getElementById("signup-form").addEventListener("submit", function (e) {
+    e.preventDefault();  // Prevent default form submission
+
+    const fullName = document.getElementById('username').value;
+    const mobile = document.getElementById('mobile').value;
+    const password = document.getElementById('new-password').value;
+
+    const signupData = {
+        fullName: fullName,
+        mobile: mobile,
+        password: password
+    };
+
+    // Send signup data to server
+    fetch('/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signupData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);  // Show success or error message
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
