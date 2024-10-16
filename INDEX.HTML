@@ -12,8 +12,8 @@
     <div class="auth-container">
         <div class="form-container">
             <div class="toggle-buttons">
-                <button id="login-btn" class="active">Login</button>
-                <button id="signup-btn">Signup</button>
+                <button id="login-btn" class="active" aria-pressed="true">Login</button>
+                <button id="signup-btn" aria-pressed="false">Signup</button>
             </div>
 
             <!-- Login Form -->
@@ -21,11 +21,11 @@
                 <h2>Login</h2>
                 <div class="input-group">
                     <label for="userid">User ID</label>
-                    <input type="text" id="userid" placeholder="Enter your User ID" required>
+                    <input type="text" id="userid" placeholder="Enter your User ID" required aria-label="User ID">
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" placeholder="Enter your password" required aria-label="Password">
                 </div>
                 <button type="submit" class="auth-btn">Login</button>
                 <p>New user? <span id="switch-to-signup">Sign up here</span></p>
@@ -36,20 +36,26 @@
                 <h2>Signup</h2>
                 <div class="input-group">
                     <label for="username">Full Name</label>
-                    <input type="text" id="username" placeholder="Enter your name" required>
+                    <input type="text" id="username" placeholder="Enter your name" required aria-label="Full Name">
                 </div>
                 <div class="input-group">
                     <label for="mobile">Mobile Number</label>
-                    <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+                    <input type="tel" id="mobile" placeholder="Enter your mobile number" required aria-label="Mobile Number">
                 </div>
                 <div class="input-group">
                     <label for="new-password">Create Password</label>
-                    <input type="password" id="new-password" placeholder="Create a strong password" required>
+                    <input type="password" id="new-password" placeholder="Create a strong password" required aria-label="Create Password">
                 </div>
                 <button type="submit" class="auth-btn">Signup</button>
                 <p>Already have an account? <span id="switch-to-login">Log in here</span></p>
             </form>
         </div>
+    </div>
+
+    <!-- Records Container -->
+    <div id="records-container" class="records-container">
+        <h2>All Records</h2>
+        <div id="records-list"></div>
     </div>
 
     <script src="INDEX.js"></script>
